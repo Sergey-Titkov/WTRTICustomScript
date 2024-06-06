@@ -1,0 +1,9 @@
+[Info]
+name=Высота.У
+hash=Indc-665CD5753F789A38
+wt_name=altitude, m
+osd_name=ВЫСОТА
+value_units_str=м
+value_units=
+value_prec=0
+custom_update_proc=1

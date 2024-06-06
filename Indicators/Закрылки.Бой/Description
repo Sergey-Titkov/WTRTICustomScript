@@ -1,0 +1,9 @@
+[Info]
+name=Закрылки.Бой
+hash=Indc-665F636918FC1F57
+wt_name=
+osd_name=БОЙ
+value_units_str=
+value_units=%
+value_prec=5
+custom_update_proc=1
