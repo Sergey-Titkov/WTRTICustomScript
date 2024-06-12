@@ -1,0 +1,9 @@
+[Info]
+name=Высота с обнулением
+hash=Indc-6668B6B5041F4046
+wt_name=altitude, m
+osd_name=Высота.0
+value_units_str=
+value_units=
+value_prec=0
+custom_update_proc=1
