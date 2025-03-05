@@ -1,8 +1,8 @@
 [Info]
-name=ZZ
-hash=Indc-6668B892576769B6
+name=Test.Custom.StateValue
+hash=Indc-667088BFFC00834A
 wt_name=altitude, m
-osd_name=T.C.SV
+osd_name=Test.C.Set
 value_units_str=
 value_units=
 value_prec=0

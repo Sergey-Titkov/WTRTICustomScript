@@ -2,47 +2,69 @@
 ------------------------------------------------------------------------------
 --- Init
 function init_proc()
-  -- setStateValue("weapon74", 0)
-  global_var = 0
+  base_level = 0
 end
 
 ------------------------------------------------------------------------------
 --- Value
 function value_proc(in_value, value_idx)
-   -- setStateValue("weapon74", 3.14)
    
-   -- local zbz = setStateValue("weapon74", 3.14)
+   -- Набор переменных для  упрвления
+   -- Использовать джойстик 0,1
+   local use_joystick  = 0
    
+   -- Да, да по именам будет правильно, но что имеем то имеем
+   -- Номерация идет с НУЛЯ!
+   -- У меня настроено по умолчанию на РУД и его кнопки 3 и 4
+   -- Номер джойстика на котором нажимается кнопка для установки поправки
+   local set_base_level_joy = 1
+   -- Номер кнопки на джойстике на котором нажимается кнопка для установки поправки
+   local set_base_level_joy_button = 12 
+   
+   -- Номер джойстика на котором нажимается кнопка для сброса поправки
+   local set_zero_base_level_joy = 1
+   -- Номер кнопки на джойстике на котором нажимается кнопка для сброса поправки
+   local set_zero_base_level_joy_button = 13
+   
+   -- Устанавливаем базовый уровень
+   local set_base_level_key      = "PageUp"
+   -- Сбрасываем базовый уровень на ноль
+   local set_zero_base_level_key = "PageDown"
+   
+   --  Получаем высоту
    local value      = getStateValue("altitude, m")
-   --local base_level = getStateValue("weapon74")
-   --if base_level == nil then
-     --base_level = -100
-   --end 
    
-   if global_var == nil then
-     global_var = 0
+   -- Проверям поправку на высоту местности.
+   -- Если переменная не определена, явно присваиваем 0
+   if base_level == nil then
+     base_level = 0
    end 
-   
-   
-   -- local result = value + base_level
-   local result = value - global_var
-   --result = global_var
-   
-   if keyIsDown("PageUp") then
-     --result = 5000
-     --local zbz = setStateValue("weapon74", 14)
-     --if zbz then 
-       -- result = 4000
-     --else
-       -- result = 3000
-     --end
-     global_var = value
-   end
+    
+   -- Вычисляем выстоту, из барометрической вычитаем нашу поправку    
+   local result = value - base_level
+   if use_joystick == 1 then
 
-   if keyIsDown("PageDown") then
-     global_var = 0
-   end
+     if getJoystickButton(set_base_level_joy, set_base_level_joy_button) then
+       -- Устанавливаем текущую высоту как поправку
+       base_level = value
+     end
 
+     if getJoystickButton(set_zero_base_level_joy, set_zero_base_level_joy_button) then
+       -- Сбрасываем поправку высоты на 0
+       base_level = 0
+     end
+
+   else
+     if keyIsDown(set_base_level_key) then
+       -- Устанавливаем текущую высоту как поправку
+       base_level = value
+     end
+
+     if keyIsDown(set_zero_base_level_key) then
+       -- Сбрасываем поправку высоты на 0
+       base_level = 0
+     end
+   end
    return result, true
 end
     

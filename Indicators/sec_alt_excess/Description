@@ -1,0 +1,9 @@
+[Info]
+name=sec_alt_excess
+hash=Indc-666D5A264DE4048B
+wt_name=radio_altitude, m
+osd_name=
+value_units_str=
+value_units=
+value_prec=0
+custom_update_proc=1
