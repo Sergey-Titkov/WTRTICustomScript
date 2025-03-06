@@ -1,0 +1,9 @@
+[Info]
+name=КСЗ - Посадка
+hash=Indc-67C8A216698C5549
+wt_name=altitude, m
+osd_name=КСЗП
+value_units_str=
+value_units=
+value_prec=0
+custom_update_proc=1

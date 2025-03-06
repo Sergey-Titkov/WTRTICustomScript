@@ -1,0 +1,9 @@
+[Info]
+name=КСЗ - Взлет
+hash=Indc-67C8A1869219A002
+wt_name=altitude, m
+osd_name=КСЗВ
+value_units_str=
+value_units=
+value_prec=0
+custom_update_proc=1

@@ -1,0 +1,9 @@
+[Info]
+name=КC. шасси
+hash=Indc-67C89E6E498E75B2
+wt_name=altitude, m
+osd_name=КСШ
+value_units_str=
+value_units=
+value_prec=0
+custom_update_proc=1
