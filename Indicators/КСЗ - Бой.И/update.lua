@@ -9,7 +9,7 @@ end
 --- Value
 function value_proc(in_value, value_idx)
   local crit_combat_flaps_spd = getVehicleData("crit_combat_flaps_spd")
-  local IAS = getStateValue("IAS, km/h")
+  local IAS = getStateValue("TAS, km/h")
   local result = 0
   local gap = 150
   
