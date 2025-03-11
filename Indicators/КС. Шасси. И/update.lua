@@ -8,20 +8,17 @@ end
 ------------------------------------------------------------------------------
 --- Value
 function value_proc(in_value, value_idx)
-  local value = 0
+  local result = 0
   local crit_gear_spd = getVehicleData("crit_gear_spd")
-  local gear = getStateValue("gear, %")
   local TAS = getStateValue("TAS, km/h")
   
-  -- Если шасси выпущены то показываем процент от критической скорости
-  if gear > 0 then
---    value = math.round(100*TAS/crit_gear_spd)
-    value = 100*TAS/crit_gear_spd
-  else
-    value = crit_gear_spd
+  if crit_gear_spd > TAS then
+    result = 1
+  else	
+    result = 2
   end 
-  
-  return value, true
+
+  return result, true
 end
 
 ------------------------------------------------------------------------------

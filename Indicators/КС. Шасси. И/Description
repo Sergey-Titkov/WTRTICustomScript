@@ -1,8 +1,8 @@
 [Info]
-name=КC. Шасси
-hash=Indc-67C89E6E498E75B2
+name=КС. Шасси. И
+hash=Indc-67CEE5B7D643F27E
 wt_name=altitude, m
-osd_name=КСШ
+osd_name=
 value_units_str=
 value_units=
 value_prec=0
