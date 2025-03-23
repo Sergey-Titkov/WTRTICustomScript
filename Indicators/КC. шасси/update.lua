@@ -13,9 +13,14 @@ function value_proc(in_value, value_idx)
   local gear = getStateValue("gear, %")
   local TAS = getStateValue("TAS, km/h")
   
+  -- У некоторых самолетов критическая скорость ВЫПУСКА шасси большая, например 700
+  -- А скорость когда шасси сломаются на земле, намного меньше, пока поставил 450
+  if crit_gear_spd > 450 and gear > 0 then
+    crit_gear_spd = 450
+  end
+  
   -- Если шасси выпущены то показываем процент от критической скорости
   if gear > 0 then
---    value = math.round(100*TAS/crit_gear_spd)
     value = 100*TAS/crit_gear_spd
   else
     value = crit_gear_spd
